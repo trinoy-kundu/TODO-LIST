@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO_Do_List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="container">
+
+        <div class="logo">
+            <img src="./images/list-icon.jpg" alt="logo_img">
+            <h1 id="header" class="header">To Do List</h1>
+        </div>
+
+        <form id="add-task-container">
+            <label for="new-task">Add New Task</label>
+            <input type="text" id="new-task" placeholder="Enter Your Task">
+            <input type="submit" id="addTask">
+        </form>
+
+        <div class="incomplete-todo-list">
+
+            <h3>Incomplete To-Do List</h3>
+
+            <ul id="items">
+                <li class="item">
+                    <input type="checkbox"><label>New Task</label>
+                </li>
+                <li class="item">
+                    <input type="checkbox"><label>New Task</label>
+                </li>
+                <li class="item">
+                    <input type="checkbox"><label>New Task</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="complete-todo-list">
+
+            <h3>Complete To-Do List</h3>
+
+            <ul>
+                <li class="item">New Task <button class="delete">Delete</button></li>
+            </ul>
+        </div>
+    </section>
+    
+</body>
+</html>

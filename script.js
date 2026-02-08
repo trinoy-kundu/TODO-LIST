@@ -6,4 +6,6 @@ let createTask = function(task) {
     label.innerText = task;
     checkBox.type = 'checkbox';
     listItem.append(checkBox, label);
+    
+    return listItem
 }

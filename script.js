@@ -19,7 +19,7 @@ let addTask = function(event) {
     event.preventDefault();
     let listItem = createTask(newTask.value);
     todoUl.appendChild(listItem);
-    listItem.value = "";
+    newTask.value = "";
     bindInCompleteItems(listItem, completeTask)
 }
 
@@ -31,12 +31,25 @@ let bindInCompleteItems = function(listItem, checkBoxClick) {
 let completeTask = function() {
     let listItem = this.parentNode;
     let deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete';
     deleteBtn.innerText = 'Delete';
     listItem.appendChild(deleteBtn);
 
     let checkBox = listItem.querySelector('input[type="checkbox"]');
     checkBox.remove();
     completeUl.appendChild(listItem);
+    unbindCompleteItems(listItem, deleteTask);
 }
+
+let unbindCompleteItems = function(listItem, deleteButtonClick) {
+    deleteBtn = listItem.querySelector('.delete');
+    deleteBtn.onclick = deleteButtonClick;
+}
+
+let deleteTask = function() {
+    let listItem = this.parentNode;
+    listItem.remove();
+}
+
 
 form.addEventListener('submit', addTask);

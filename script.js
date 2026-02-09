@@ -8,6 +8,7 @@ let createTask = function(task) {
     let label = document.createElement('label');
     let checkBox = document.createElement('input');
 
+    listItem.classList.add('item');
     label.innerText = task;
     checkBox.type = 'checkbox';
     listItem.append(checkBox, label);
@@ -33,10 +34,11 @@ let completeTask = function() {
     let deleteBtn = document.createElement('button');
     deleteBtn.className = 'delete';
     deleteBtn.innerText = 'Delete';
-    listItem.appendChild(deleteBtn);
+    
 
     let checkBox = listItem.querySelector('input[type="checkbox"]');
     checkBox.remove();
+    listItem.appendChild(deleteBtn);
     completeUl.appendChild(listItem);
     unbindCompleteItems(listItem, deleteTask);
 }

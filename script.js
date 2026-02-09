@@ -51,5 +51,12 @@ let deleteTask = function() {
     listItem.remove();
 }
 
+for(i = 0; i < todoUl.children.length; i++) {
+    bindInCompleteItems(todoUl.children[i], completeTask)
+}
+
+for(i = 0; i < completeUl.children.length; i++) {
+    unbindCompleteItems(completeUl.children[i], deleteTask)
+}
 
 form.addEventListener('submit', addTask);
